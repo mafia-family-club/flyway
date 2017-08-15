@@ -1,3 +1,3 @@
-INSERT INTO members(gender, name, surname)
+INSERT INTO members(id, gender, name, surname)
 VALUES
-  ('Male', 'Eugene', 'Karanda')
+  (0, 'MALE', 'Eugene', 'Karanda')
