@@ -4,11 +4,13 @@ buildscript {
     }
 
     dependencies {
-        classpath "se.transmode.gradle:gradle-docker:1.2"
+        classpath 'org.postgresql:postgresql:9.4-1205-jdbc4'
     }
 }
 
-apply plugin: 'docker'
+plugins {
+    id "org.flywaydb.flyway" version "4.2.0"
+}
 
 group = 'mafia-family-club'
 version = '0.0.1-SNAPSHOT'
@@ -17,14 +19,8 @@ task wrapper(type: Wrapper) {
     gradleVersion = '3.3'
 }
 
-task buildDocker(type: Docker) {
-    applicationName = 'flyway'
-    dockerfile = file('Dockerfile')
-
-    doFirst {
-        copy {
-            from 'src'
-            into "${stageDir}/src"
-        }
-    }
+flyway {
+    url = "jdbc:postgresql://$databaseHost:$databasePort/$databaseName"
+    user = databaseUser
+    password = databasePassword
 }
