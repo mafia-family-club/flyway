@@ -1,6 +1,6 @@
 CREATE TABLE members (
-  id SERIAL PRIMARY KEY,
-  gender character varying(20) NOT NULL,
-  name character varying(32) NOT NULL,
-  surname character varying(32) NOT NULL
+  "id"      SERIAL PRIMARY KEY,
+  "gender"  CHARACTER VARYING(20) NOT NULL,
+  "name"    CHARACTER VARYING(32) NOT NULL,
+  "surname" CHARACTER VARYING(32) NOT NULL
 );

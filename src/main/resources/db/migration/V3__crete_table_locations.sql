@@ -1,0 +1,6 @@
+CREATE TABLE locations (
+  "id"      SERIAL PRIMARY KEY,
+  "name"    CHARACTER VARYING(63) NOT NULL,
+  "url"     CHARACTER VARYING     NOT NULL,
+  "address" CHARACTER VARYING     NOT NULL
+);
