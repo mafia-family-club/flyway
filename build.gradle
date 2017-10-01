@@ -21,7 +21,7 @@ task wrapper(type: Wrapper) {
 
 flyway {
     url = "jdbc:postgresql://$databaseHost:$databasePort/$databaseName"
-    schemas = databaseSchema
+    schemas = "databaseSchema"
     user = databaseUser
     password = databasePassword
 }
