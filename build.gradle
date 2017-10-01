@@ -9,7 +9,7 @@ buildscript {
 }
 
 plugins {
-    id "org.flywaydb.flyway" version "4.2.0"
+    id 'org.flywaydb.flyway' version '4.2.0'
 }
 
 group = 'mafia-family-club'
@@ -21,7 +21,11 @@ task wrapper(type: Wrapper) {
 
 flyway {
     url = "jdbc:postgresql://$databaseHost:$databasePort/$databaseName"
-    schemas = "databaseSchema"
-    user = databaseUser
-    password = databasePassword
+
+    if(project.hasProperty('databaseSchema')) {
+        schemas = ["$databaseSchema"]
+    }
+
+    user = "$databaseUser"
+    password = "$databasePassword"
 }
