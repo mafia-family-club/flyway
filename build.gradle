@@ -16,7 +16,7 @@ group = 'mafia-family-club'
 version = '0.0.1-SNAPSHOT'
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.3'
+    gradleVersion = '3.5'
 }
 
 flyway {
